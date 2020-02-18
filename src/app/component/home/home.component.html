@@ -1,0 +1,15 @@
+
+<ly-toolbar position="static" bg="primary" [elevation]="3">
+    <p lyTyp="title">Poquedex</p>
+    <input type="text" placeholder="search..." [(ngModel)]="filterpost" name="filterpost" class="search">
+    <i class="material-icons">
+        search
+    </i>
+  </ly-toolbar>
+  
+<ly-card [maxWidth]="320" *ngFor="let poke of pokemons | filter:filterpost">
+    <img [src]="poke.image" width="200px" >
+    <ly-card-content>
+      <h2 lyTyp="headline" gutterBottom>{{poke.name}}</h2>
+    </ly-card-content>
+</ly-card>
